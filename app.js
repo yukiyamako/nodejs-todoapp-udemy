@@ -16,7 +16,7 @@ const start = async () => {
     try {
         await connectDB(process.env.MONGO_HEROKU_URL || process.env.MONGO_URL);
         //await connectDB("mongodb+srv://udemy:udemy@cluster0.p3ondlz.mongodb.net/todoapp?retryWrites=true&w=majority");
-        app.listen(PORT, console.log("サーバが起動しました"));
+        app.listen(process.env.PORT || PORT, console.log("サーバが起動しました"));
     } catch(err){
         console.log(err);
     }
